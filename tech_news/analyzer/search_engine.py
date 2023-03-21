@@ -17,4 +17,8 @@ def search_by_date(date):
 
 # Requisito 9
 def search_by_category(category):
-    """Seu código deve vir aqui"""
+    response = search_news(
+        {"category": category.capitalize()}
+    )
+    news_list = [(news["title"], news["url"]) for news in response]
+    return news_list
